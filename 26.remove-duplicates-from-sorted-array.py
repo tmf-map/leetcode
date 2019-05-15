@@ -5,13 +5,14 @@
 #
 class Solution:
     def removeDuplicates(self, nums):
-        curr_index = 0
-        i = 0
-        while curr_index < len(nums) - 1:
-            if nums[curr_index] == nums[curr_index + 1]:
-                del nums[curr_index]
-                curr_index -= 1
-            curr_index += 1
-            i += 1
-        return len(nums)
+        if not nums: return 0
+        slow = quick = 0
+        while quick < len(nums):
+            if nums[slow] == nums[quick]:
+                quick += 1
+            else:
+                slow += 1
+                nums[slow] = nums[quick]
+                quick += 1
+        return slow + 1
 
