@@ -92,3 +92,5 @@ typings/
 # IDE
 .vscode
 .idea
+
+leetcode-plugin/
